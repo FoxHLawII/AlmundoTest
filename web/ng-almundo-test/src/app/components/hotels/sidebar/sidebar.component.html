@@ -12,8 +12,8 @@
       </div>
     </div>
     <div class="collapsible-content row" [class.active]="showByName">
-      <input type="text" name="hotelName" id="name" placeholder="Ingrese el nombre del hotel">
-      <button>Aceptar</button>
+      <input (keydown.enter)="setName(hotelName.value)" type="text" placeholder="Ingrese el nombre del hotel" #hotelName>
+      <button (click)="setName(hotelName.value)">Aceptar</button>
     </div>
     <div class="collapsible" (click)="toggleShowByStars()" [class.active]="showByStars">
       <div>
@@ -24,11 +24,11 @@
     </div>
     <div class="collapsible-content column" [class.active]="showByStars">
       <label for="stars-all" class="stars-item">
-        <input type="checkbox" name="stars" value="all"  id="stars-all">
+        <input (click)="setStars()" type="radio" name="stars" value="all" id="stars-all">
         <span>Todas las estrellas</span>
       </label>
       <label *ngFor="let quantity of stars; let i = index" for="star-{{ i }}" class="stars-item">
-        <input type="checkbox" name="stars" id="star-{{ i }}">
+        <input (click)="setStars(quantity)" type="radio" name="stars" id="star-{{ i }}">
         <img *ngFor="let star of getStars(quantity)" src="assets/icons/filters/star-yellow.svg" alt="">
       </label>
     </div>

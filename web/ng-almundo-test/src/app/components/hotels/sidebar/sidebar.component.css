@@ -1,12 +1,7 @@
 section {
   width: 320px;
+  margin-right: 20px;
   background-color: #fff;
-}
-
-section hr {
-  height: 3px;
-  border: none;
-  background-color: #F4F4F4;
 }
 
 section .collapsible {
@@ -69,8 +64,12 @@ section .collapsible-content .collapsible div .arrow {
 
 section .collapsible-content .collapsible-content {
   display: flex;
-  padding: 0 10px 6px 10px;
+  padding: 0 10px 0 10px;
   justify-content: space-between;
+}
+
+section .collapsible-content .collapsible-content.active {
+  padding-bottom: 6px;
 }
 
 section .collapsible-content .collapsible-content.column {
@@ -124,5 +123,6 @@ section .collapsible-content .collapsible-content .stars-item img {
 @media only screen and (max-width: 700px) {
   section {
     width: 100%;
+    margin-bottom: 20px;
   }
 }

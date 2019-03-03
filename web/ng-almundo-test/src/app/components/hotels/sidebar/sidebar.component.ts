@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,10 +12,32 @@ export class SidebarComponent implements OnInit {
   public showByName = true;
   public showByStars = true;
 
+  private starsInput: number;
+  private nameInput: string;
+
+  @Output() filter: EventEmitter<any> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
     this.stars = Array(MAX_STARS).fill(MAX_STARS).map((value, index) => value - index);
+  }
+
+  public setStars(quantity?: number): void {
+    if (quantity) this.starsInput = quantity;
+    else this.starsInput = null;
+    this.filterHotels(this.nameInput, this.starsInput);
+  }
+
+  public setName(name?: string): void {
+    if (name) this.nameInput = name;
+    else this.nameInput = null;
+    this.filterHotels(this.nameInput, this.starsInput);
+  }
+
+  public filterHotels(name: string, stars: number) {
+    const data = { name, stars };
+    this.filter.emit(data);
   }
 
   public getStars(quantity: number): any {

@@ -1,13 +1,15 @@
 require('./config/enviroment');
 
 const bodyParser = require('body-parser');
-const path = require('path');
 const express = require('express');
+const path = require('path');
+const cors = require('cors');
 
 const controllers = require('./controllers');
 
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 

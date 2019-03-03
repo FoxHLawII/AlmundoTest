@@ -1,0 +1,19 @@
+<article class="hotel-item">
+  <figure class="image-container">
+    <img src="assets/images/hotels/{{ hotel.image }}" alt="Hotel image">
+  </figure>
+  <div class="information">
+    <h3>{{ hotel.name }}</h3>
+    <div class="stars">
+      <img *ngFor="let star of getStars(hotel.stars)" src="assets/icons/filters/star-yellow.svg" alt="Star icon">
+    </div>
+    <div class="amenities">
+      <img *ngFor="let amenitie of hotel.amenities" src="assets/icons/amenities/{{ amenitie }}.svg" alt="Amenitie icon">
+    </div>
+  </div>
+  <div class="price">
+    <p>Precio por noche por habitación</p>
+    <span>ARS <strong>{{ hotel.price }}</strong></span>
+    <button>Ver hotel</button>
+  </div>
+</article>
