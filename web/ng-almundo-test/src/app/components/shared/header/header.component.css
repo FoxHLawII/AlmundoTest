@@ -1,0 +1,11 @@
+nav {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #0B3E81;
+}
+
+nav img {
+  margin-left: 10px;
+  height: 40px;
+}

@@ -1,0 +1,19 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background-color: #ea6422;
+}
+
+.home figure img {
+  width: 400px;
+}
+
+.home h1, .home a {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.home a {
+  text-decoration: none;
+  font-size: 30px;
+}

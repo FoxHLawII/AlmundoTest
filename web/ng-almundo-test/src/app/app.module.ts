@@ -7,12 +7,14 @@ import { HotelsComponent } from './components/hotels/hotels.component';
 import { ROUTES } from './app.routing';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { HeaderComponent } from './components/shared/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HotelsComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
