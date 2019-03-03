@@ -1,0 +1,36 @@
+<section>
+  <div class="collapsible" (click)="toggleShowAllFilters()" [class.active]="showAllFilters">
+    <h2>Filtros</h2>
+    <img src="assets/icons/filters/arrow.svg" alt="Flecha">
+  </div>
+  <div class="collapsible-content" [class.active]="showAllFilters">
+    <div class="collapsible" (click)="toggleShowByName()" [class.active]="showByName">
+      <div>
+        <img class="icon" src="assets/icons/filters/search.svg" alt="Lupa">
+        <span>Nombre del hotel</span>
+        <img class="arrow" src="assets/icons/filters/arrow.svg" alt="Flecha">
+      </div>
+    </div>
+    <div class="collapsible-content row" [class.active]="showByName">
+      <input type="text" name="hotelName" id="name" placeholder="Ingrese el nombre del hotel">
+      <button>Aceptar</button>
+    </div>
+    <div class="collapsible" (click)="toggleShowByStars()" [class.active]="showByStars">
+      <div>
+        <img class="icon" src="assets/icons/filters/star-blue.svg" alt="Lupa">
+        <span>Estrellas</span>
+        <img class="arrow" src="assets/icons/filters/arrow.svg" alt="Flecha">
+      </div>
+    </div>
+    <div class="collapsible-content column" [class.active]="showByStars">
+      <label for="stars-all" class="stars-item">
+        <input type="checkbox" name="stars" value="all"  id="stars-all">
+        <span>Todas las estrellas</span>
+      </label>
+      <label *ngFor="let quantity of stars; let i = index" for="star-{{ i }}" class="stars-item">
+        <input type="checkbox" name="stars" id="star-{{ i }}">
+        <img *ngFor="let star of getStars(quantity)" src="assets/icons/filters/star-yellow.svg" alt="">
+      </label>
+    </div>
+  </div>
+</section>
