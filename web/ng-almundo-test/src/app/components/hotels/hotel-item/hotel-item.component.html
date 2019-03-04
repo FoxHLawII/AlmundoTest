@@ -1,6 +1,6 @@
 <article class="hotel-item">
   <figure class="image-container">
-    <img src="assets/images/hotels/{{ hotel.image }}" alt="Hotel image">
+    <img src="assets/images/hotels/{{ hotel.image }}" (error)="handleErrorImage($event)" alt="Hotel image">
   </figure>
   <div class="information">
     <h3>{{ hotel.name }}</h3>

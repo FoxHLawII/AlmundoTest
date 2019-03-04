@@ -20,4 +20,8 @@ export class HotelItemComponent implements OnInit {
     return Array(quantity).fill(1);
   }
 
+  public handleErrorImage(event: any): void {
+    event.target.src = 'assets/images/hotels/default.png';
+  }
+
 }
